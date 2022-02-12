@@ -1,0 +1,16 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 500px;
+  height: 500px;
+
+  background-color: #61dafb;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
