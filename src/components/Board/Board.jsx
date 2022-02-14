@@ -7,7 +7,6 @@ const Board = props => {
 
     const CARD_ID = evt.dataTransfer.getData('card-id')
     const card = document.querySelector(`[data-card-id="${CARD_ID}"]`)
-    card.style.display = 'block'
 
     evt.target.appendChild(card)
   }

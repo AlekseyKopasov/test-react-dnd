@@ -1,14 +1,11 @@
 import React from 'react'
 import styles from './Card.module.scss'
+import Shape from '../Shape/Shape'
 
 const Card = props => {
   const dragStartHandler = evt => {
     const { target } = evt
     evt.dataTransfer.setData('card-id', target.id)
-
-    setTimeout(() => {
-      target.style.display = 'none'
-    }, 0)
   }
 
   const dragOverHandler = evt => {
@@ -16,7 +13,7 @@ const Card = props => {
   }
 
   const dragEndHandler = evt => {
-    console.log('end', evt.target)
+    evt.preventDefault()
   }
 
   return (
@@ -29,8 +26,7 @@ const Card = props => {
       onDragEnd={dragEndHandler}
       onDragOver={dragOverHandler}
     >
-      {/*{ props.children }*/}
-      { props.text }
+      <Shape icon={props.icon}/>
     </div>
   )
 }

@@ -2,22 +2,34 @@ import './App.css';
 import Card from './components/Card/Card'
 import Board from './components/Board/Board'
 
+import circle from './svg/circle.svg'
+import block from './svg/block.svg'
+import square from './svg/square.svg'
+import ellipse from './svg/ellipse.svg'
+import triangle from './svg/triangle.svg'
+
 function App() {
   const shapeList = [
-    {id: 1, order: 1, type: 'circle'},
-    {id: 2, order: 2, type: 'triangle'},
-    {id: 3, order: 4, type: 'square'},
+    {id: 1, icon: circle},
+    {id: 2, icon: block},
+    {id: 3, icon: square},
+    {id: 4, icon: ellipse},
+    {id: 5, icon: triangle},
   ];
 
   return (
     <div className="App">
+      <symbol>
+        <circle />
+      </symbol>
+
       <div className="wrapper">
         <Board>
           {shapeList.map(card =>
             <Card
               key={card.id}
               id={card.id}
-              text={card.type}
+              icon={card.icon}
             />
           )}
         </Board>
