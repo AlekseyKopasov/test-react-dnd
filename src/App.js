@@ -19,10 +19,6 @@ function App() {
 
   return (
     <div className="App">
-      <symbol>
-        <circle />
-      </symbol>
-
       <div className="wrapper">
         <Board>
           {shapeList.map(card =>
